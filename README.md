@@ -1,11 +1,22 @@
-This is a Kotlin Multiplatform project targeting Android, Desktop.
+# Fantasy Puppy Bowl
 
-* `/composeApp` is for code that will be shared across your Compose Multiplatform applications.
-  It contains several subfolders:
-  - `commonMain` is for code that’s common for all targets.
-  - Other folders are for Kotlin code that will be compiled for only the platform indicated in the folder name.
-    For example, if you want to use Apple’s CoreCrypto for the iOS part of your Kotlin app,
-    `iosMain` would be the right folder for such calls.
+This is a simple app made in Kotlin Multiplatform that facilitates Puppy Bowl Fantasy Drafting. 
 
+> Note: It should be obvious but this is a project I made for fun. It is not to be taken seriously or used for any betting.
 
-Learn more about [Kotlin Multiplatform](https://www.jetbrains.com/help/kotlin-multiplatform-dev/get-started.html)…
+It works by:
+* Pulling the player data from the website lineup
+* Parsing the HTML script from an html json into data classes
+* Displaying the players in a grid in compose multiplatform
+
+The app features:
+* The option to search for a player
+* Select players for four teams: Red, Green, Blue and Yellow
+* Toggle whether to show or hide selected players
+* Exporting your selection into a CSV to track scoring
+
+This is all done in KMP using the Libraries:
+* [Coil](https://github.com/coil-kt/coil)
+* [KSoup](https://github.com/MohamedRejeb/Ksoup)
+* [Kotlin-CSV](https://github.com/jsoizo/kotlin-csv)
+* [KotlinX Serialization](https://github.com/Kotlin/kotlinx.serialization)
