@@ -6,6 +6,8 @@ class CSVWriter {
     fun writeCSV(fileName: String, dogs: List<DogListItem>) {
         csvWriter().open(fileName) {
             writeRow("Name", "Team", "Touchdowns", "Field Goals", "Penalties", "Total")
+            writeRow("", "", 3, 1, -1)
+            writeRow("")
             dogs.forEach {
                 writeRow(it.name, it.team, 0, 0, 0, 0)
             }
