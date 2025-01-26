@@ -36,7 +36,7 @@ fun DogItem(listItem: DogListItem, modifier: Modifier = Modifier, onClick: () ->
             )
             Text(
                 text = listItem.name,
-                style = MaterialTheme.typography.caption,
+                style = MaterialTheme.typography.body1,
                 softWrap = false,
             )
         }

@@ -75,7 +75,7 @@ fun DogScreen(dogViewModel: DogViewModel) {
         }
     ) { innerPadding ->
         LazyVerticalGrid(
-            columns = GridCells.Fixed(8)
+            columns = GridCells.Fixed(getPlatform().rowSize)
         ) {
             itemsIndexed(dogState.value.dogs) { index, photo ->
                 DogItem(
