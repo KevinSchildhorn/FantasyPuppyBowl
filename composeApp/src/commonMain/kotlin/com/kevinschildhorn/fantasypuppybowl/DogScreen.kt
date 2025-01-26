@@ -36,7 +36,7 @@ import fantasypuppybowl.composeapp.generated.resources.visibility_off_24dp
 import org.jetbrains.compose.resources.painterResource
 
 @Composable
-fun DogView(dogViewModel: DogViewModel) {
+fun DogScreen(dogViewModel: DogViewModel) {
     val dogState = dogViewModel.uiState.collectAsStateWithLifecycle()
     var indexForBottomSheet by remember { mutableStateOf(-1) }
 
@@ -75,7 +75,7 @@ fun DogView(dogViewModel: DogViewModel) {
         }
     ) { innerPadding ->
         LazyVerticalGrid(
-            columns = GridCells.Fixed(4)
+            columns = GridCells.Fixed(8)
         ) {
             itemsIndexed(dogState.value.dogs) { index, photo ->
                 DogItem(

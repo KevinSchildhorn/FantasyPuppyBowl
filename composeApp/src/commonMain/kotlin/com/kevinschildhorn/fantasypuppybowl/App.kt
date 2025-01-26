@@ -9,6 +9,6 @@ import org.jetbrains.compose.ui.tooling.preview.Preview
 fun App() {
     val dogViewModel = DogViewModel()
     MaterialTheme {
-        DogView(dogViewModel)
+        DogScreen(dogViewModel)
     }
 }
