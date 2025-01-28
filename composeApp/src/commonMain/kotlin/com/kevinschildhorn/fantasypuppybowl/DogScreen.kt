@@ -69,7 +69,7 @@ fun DogScreen(dogViewModel: DogViewModel) {
         floatingActionButton = {
             FloatingActionButton({
                 dogViewModel.writeCSV()
-            }){
+            }) {
                 Icon(painterResource(Res.drawable.save_24dp), null)
             }
         }
@@ -96,37 +96,43 @@ fun DogScreen(dogViewModel: DogViewModel) {
                     .zIndex(2f)
                     .fillMaxSize()
             ) {
-                Card(modifier = Modifier.zIndex(3f).fillMaxWidth().padding(20.dp)) {
-                    Column {
-                        IconButton({
-                            dogViewModel.toggleDogAtIndex(indexForBottomSheet, Team.RED)
-                            indexForBottomSheet = -1
-                        }, modifier = Modifier.fillMaxWidth()) {
-                            Text("Red Team")
-                        }
-                        IconButton({
-                            dogViewModel.toggleDogAtIndex(indexForBottomSheet, Team.GREEN)
-                            indexForBottomSheet = -1
-                        }, modifier = Modifier.fillMaxWidth()) {
-                            Text("Green Team")
-                        }
-                        IconButton({
-                            dogViewModel.toggleDogAtIndex(indexForBottomSheet, Team.BLUE)
-                            indexForBottomSheet = -1
-                        }, modifier = Modifier.fillMaxWidth()) {
-                            Text("Blue Team")
-                        }
-                        IconButton({
-                            dogViewModel.toggleDogAtIndex(indexForBottomSheet, Team.YELLOW)
-                            indexForBottomSheet = -1
-                        }, modifier = Modifier.fillMaxWidth()) {
-                            Text("Yellow Team")
-                        }
-                        Button({
-                            dogViewModel.toggleDogAtIndex(indexForBottomSheet, Team.NONE)
-                            indexForBottomSheet = -1
-                               }, modifier = Modifier.fillMaxWidth()) {
-                            Text("None")
+                Row {
+                    DogSummary(
+                        dogState.value.dogs[indexForBottomSheet],
+                        modifier = Modifier.fillMaxWidth(0.5f)
+                    )
+                    Card(modifier = Modifier.zIndex(3f).fillMaxWidth().padding(20.dp)) {
+                        Column {
+                            IconButton({
+                                dogViewModel.toggleDogAtIndex(indexForBottomSheet, Team.RED)
+                                indexForBottomSheet = -1
+                            }, modifier = Modifier.fillMaxWidth()) {
+                                Text("Red Team")
+                            }
+                            IconButton({
+                                dogViewModel.toggleDogAtIndex(indexForBottomSheet, Team.GREEN)
+                                indexForBottomSheet = -1
+                            }, modifier = Modifier.fillMaxWidth()) {
+                                Text("Green Team")
+                            }
+                            IconButton({
+                                dogViewModel.toggleDogAtIndex(indexForBottomSheet, Team.BLUE)
+                                indexForBottomSheet = -1
+                            }, modifier = Modifier.fillMaxWidth()) {
+                                Text("Blue Team")
+                            }
+                            IconButton({
+                                dogViewModel.toggleDogAtIndex(indexForBottomSheet, Team.YELLOW)
+                                indexForBottomSheet = -1
+                            }, modifier = Modifier.fillMaxWidth()) {
+                                Text("Yellow Team")
+                            }
+                            Button({
+                                dogViewModel.toggleDogAtIndex(indexForBottomSheet, Team.NONE)
+                                indexForBottomSheet = -1
+                            }, modifier = Modifier.fillMaxWidth()) {
+                                Text("None")
+                            }
                         }
                     }
                 }
